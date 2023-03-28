@@ -21,8 +21,8 @@ services:
         runtime: custom
         caPort: 9000
         timeout: 30
-        environmentVariables:
-          openAiSecret: '${env.openAiSecret}'
+#        environmentVariables:
+#          openAiSecret: '${env.openAiSecret}'
         customRuntimeConfig:
           command:
             - node
