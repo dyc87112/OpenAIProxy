@@ -15,7 +15,27 @@ services:
         name: openai-proxy
         description: openai-proxy
         codeUri: ./code
-        handler: index.handler
+        cpu: 0.05
         memorySize: 128
-        runtime: nodejs18
-        timeout: 5
+        diskSize: 512
+        runtime: custom
+        caPort: 9000
+        timeout: 30
+        customRuntimeConfig:
+          command:
+            - ./bootstrap
+#        layers:
+#          - acs:fc:us-west-1:official:layers/Nodejs18/versions/1
+      triggers: # 触发器配置
+        - name: httpTrigger # 触发器名称
+          type: http # 触发器类型
+          config: # 触发器配置，包括OSS触发器, Log触发器, Log触发器, Timer触发器, Http触发器, MNS触发器, CDN触发器
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            disableURLInternet: false # 是否禁用公网访问 URL
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+              - POST
+              - PUT
+              - DELETE
+
+
