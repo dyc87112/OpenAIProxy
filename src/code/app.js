@@ -4,6 +4,9 @@
   } = require('http-proxy-middleware');
   const app = express()
   const port = 9000
+  const openAiSecret = process.env.openAiSecret;
+  console.log(openAiSecret);
+
 
   app.use('/', createProxyMiddleware({
     target: 'https://api.openai.com',

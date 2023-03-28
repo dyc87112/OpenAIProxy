@@ -21,11 +21,12 @@ services:
         runtime: custom
         caPort: 9000
         timeout: 30
+        environmentVariables:
+          openAiSecret: '${env.openAiSecret}'
         customRuntimeConfig:
           command:
-            - ./bootstrap
-#        layers:
-#          - acs:fc:us-west-1:official:layers/Nodejs18/versions/1
+            - node
+            - app.js
       triggers: # 触发器配置
         - name: httpTrigger # 触发器名称
           type: http # 触发器类型
@@ -38,4 +39,14 @@ services:
               - PUT
               - DELETE
 
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: '/*'
+              methods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
 
