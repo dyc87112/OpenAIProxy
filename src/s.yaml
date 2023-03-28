@@ -1,0 +1,21 @@
+edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
+name: openai-proxy       #  项目名称
+access: {{ access }}  #  秘钥别名
+
+services:
+  function-test: #  服务名称
+    component: fc  # 组件名称
+    props: #  组件的属性值
+      region: us-west-1
+      # region: "{{ region }}" # 来自 publish.yaml Parameters 参数定义, 更多关于变量的使用方法，可以参考：https://www.serverless-devs.com/serverless-devs/yaml#变量赋值
+      service:
+        name: openai-proxy
+        description: 欢迎使用openai-proxy
+      function:
+        name: openai-proxy
+        description: openai-proxy
+        codeUri: ./code
+        handler: index.handler
+        memorySize: 128
+        runtime: nodejs18
+        timeout: 5
