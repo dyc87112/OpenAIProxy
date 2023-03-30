@@ -25,41 +25,23 @@
 
 使用该项目，您需要有开通以下服务：
 
-<service>
-
-| 服务 |  备注  |
-| --- |  --- |
-| 函数计算 FC |  快速体验部署openai-proxy |
-
-</service>
+- 函数计算 FC
 
 推荐您拥有以下的产品权限 / 策略：
 
-<auth>
+- 函数计算 / AliyunFCFullAccess
 
-| 服务/业务 |  权限 |  备注  |
-| --- |  --- |   --- |
-| 函数计算 | AliyunFCFullAccess |  快速体验部署openai-proxy |
+## 应用中心一键部署
 
-</auth>
+通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=openai-proxy) ，点击下面按钮直接部署体验：
 
-## 部署 & 体验
+[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=openai-proxy)
 
-<appcenter>
+## Serverless Devs Cli 部署
 
-- 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=openai-proxy) ，
-  [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=openai-proxy) 该应用。
-
-</appcenter>
-
-<deploy>
-
-- 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
-  - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://docs.serverless-devs.com/fc/config) ；
-  - 初始化项目：`s init openai-proxy -d openai-proxy `
-  - 进入项目，并进行项目部署：`cd openai-proxy && s deploy - y`
-
-</deploy>
+1. [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://docs.serverless-devs.com/fc/config) ； 
+2. 初始化项目：`s init openai-proxy -d openai-proxy `
+3. 进入项目，并进行项目部署：`cd openai-proxy && s deploy - y`
 
 ## 使用文档
 
@@ -68,3 +50,9 @@
 部署完成之后，获得一个域名，该域名可以用来替代 https://api.openai.com 来使用。
 
 </usedetail>
+
+## 深入交流
+
+欢迎关注公众号：程序猿DD，分享前沿技术资讯，一起探索ChatGPT
+
+
